@@ -25,20 +25,7 @@ struct special1App: App {
 
     var body: some Scene {
         WindowGroup {
-            TabView {
-                ContentView()
-                    .tabItem {
-                        Label("หน้าแรก", systemImage: "house")
-                    }
-                MatchesView()
-                    .tabItem {
-                        Label("นัดการแข่งขัน", systemImage: "soccerball")
-                    }
-                StandingsView()
-                    .tabItem {
-                        Label("ตารางคะแนน", systemImage: "list.number")
-                    }
-            }
+            ContentView()
         }
         .modelContainer(sharedModelContainer)
     }

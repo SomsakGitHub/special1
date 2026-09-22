@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS matches (
   odds_home numeric,
   odds_draw numeric,
   odds_away numeric,
+  handicap numeric,
   CHECK (home_team_id <> away_team_id)
 );
 
@@ -27,3 +28,5 @@ CREATE INDEX IF NOT EXISTS idx_matches_matchday ON matches (matchday);
 CREATE INDEX IF NOT EXISTS idx_matches_status ON matches (status);
 
 CREATE UNIQUE INDEX IF NOT EXISTS uq_matches_fixture ON matches (matchday, home_team_id, away_team_id);
+
+ALTER TABLE matches ADD COLUMN IF NOT EXISTS handicap numeric;

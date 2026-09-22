@@ -40,6 +40,12 @@ struct APIClient {
         return URL(string: "https://special1-api.js6ctz7gtj.workers.dev")!
     }
 
+    func home() async throws -> HomeInfo {
+        let url = baseURL.appendingPathComponent("api/home")
+        let (data, _) = try await send(url)
+        return try decode(HomeInfo.self, from: data)
+    }
+
     func matches(finished: Bool? = nil, upcoming: Bool? = nil) async throws -> [Match] {
         var components = URLComponents(url: baseURL.appendingPathComponent("api/matches"), resolvingAgainstBaseURL: false)
         if let finished {

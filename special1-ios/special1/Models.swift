@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct HomeInfo: Codable, Hashable {
+    let club: String
+    let handicap: String?
+}
+
 struct Team: Codable, Identifiable, Hashable {
     let id: Int
     let name: String

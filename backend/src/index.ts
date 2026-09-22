@@ -87,6 +87,29 @@ export default {
       }
     }
 
+    if (pathname === "/api/home" && method === "GET") {
+      try {
+        const sql = getSql(env);
+        const rows = (await sql`
+          SELECT
+            (SELECT name FROM teams WHERE short_name = 'MUN') AS "club",
+            (SELECT handicap
+             FROM matches m
+             JOIN teams ht ON ht.id = m.home_team_id
+             JOIN teams at ON at.id = m.away_team_id
+             WHERE (ht.short_name = 'MUN' OR at.short_name = 'MUN')
+               AND m.status != 'finished'
+               AND m.handicap IS NOT NULL
+             ORDER BY m.matchday, m.kickoff_at
+             LIMIT 1) AS "handicap"
+        `) as Row[];
+        const row = rows[0] ?? {};
+        return json({ club: row.club ?? "Manchester United", handicap: row.handicap ?? null });
+      } catch (err) {
+        return serverError(`Query failed: ${(err as Error).message}`);
+      }
+    }
+
     if (pathname === "/api/teams" && method === "GET") {
       try {
         const sql = getSql(env);
