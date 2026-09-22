@@ -33,10 +33,10 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
                     .contentTransition(.opacity)
 
-                Text(formattedHandicap)
+                Text(handicap ?? "–")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
-                    .contentTransition(.numericText(value: numericHandicap))
+                    .contentTransition(.opacity)
             }
         }
         .padding()
@@ -45,15 +45,6 @@ struct ContentView: View {
         .animation(.easeInOut(duration: 0.4), value: clubName)
         .animation(.easeInOut(duration: 0.4), value: handicap)
         .animation(.easeInOut(duration: 0.3), value: isLoading)
-    }
-
-    private var numericHandicap: Double {
-        Double(handicap ?? "") ?? 0
-    }
-
-    private var formattedHandicap: String {
-        guard let handicap, let value = Double(handicap) else { return "–" }
-        return value == 0 ? "0.0" : String(format: "%.1f", value)
     }
 
     private func load() async {
