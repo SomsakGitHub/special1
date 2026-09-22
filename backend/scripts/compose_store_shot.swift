@@ -38,8 +38,8 @@ func drawText(_ s: String, size: CGFloat, weight: NSFont.Weight, y: CGFloat) {
     let sz = str.size()
     str.draw(at: NSPoint(x: (W - sz.width) / 2, y: y))
 }
-drawText("MANCHESTER UNITED", size: 84, weight: .bold, y: H - 300)
-drawText("-0.5", size: 150, weight: .heavy, y: H - 560)
+drawText("YOUR CLUB", size: 84, weight: .bold, y: H - 300)
+drawText("LIVE", size: 150, weight: .heavy, y: H - 560)
 
 // app screenshot with rounded corners + shadow
 let sw: CGFloat = 1080

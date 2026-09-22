@@ -35,6 +35,15 @@ function serverError(message: string): Response {
   return json({ error: message }, 500);
 }
 
+function html(content: string): Response {
+  return new Response(content, {
+    headers: {
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "public, max-age=3600",
+    },
+  });
+}
+
 type Row = Record<string, any>;
 
 export default {
@@ -79,6 +88,30 @@ export default {
       } catch (err) {
         return serverError(`Query failed: ${(err as Error).message}`);
       }
+    }
+
+    if (pathname === "/privacy" && method === "GET") {
+      return html(`
+<!doctype html><html lang="th"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — special1</title>
+<body style="font-family:-apple-system,system-ui;max-width:640px;margin:40px auto;padding:0 16px;line-height:1.6;color:#222">
+<h1>Privacy Policy</h1>
+<p>Special1 does not collect, store, or share any personal data. The app only displays public football information loaded from our own server. No third-party analytics or advertising SDKs are used.</p>
+<p><em>Last updated: September 23, 2026</em></p>
+</body></html>`);
+    }
+
+    if (pathname === "/support" && method === "GET") {
+      return html(`
+<!doctype html><html lang="th"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — special1</title>
+<body style="font-family:-apple-system,system-ui;max-width:640px;margin:40px auto;padding:0 16px;line-height:1.6;color:#222">
+<h1>Support</h1>
+<p>If you have questions about Special1, please contact the developer by providing your feedback through the App Store review or by reaching out via GitHub:
+<a href="https://github.com/SomsakGitHub/special1">github.com/SomsakGitHub/special1</a>.</p>
+</body></html>`);
     }
 
     return notFound(`No route for ${method} ${pathname}`);
