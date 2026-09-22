@@ -50,18 +50,24 @@
 /* Begin PBXFrameworksBuildPhase section */
 		FE8512AA3062B9A40092C1F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FE8512B93062B9A50092C1F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FE8512C33062B9A50092C1F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -98,6 +104,8 @@
 				FE8512AB3062B9A40092C1F7 /* Resources */,
 			);
 			buildRules = (
+			);
+			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
 				FE8512AF3062B9A40092C1F7 /* special1 */,
@@ -196,36 +204,48 @@
 /* Begin PBXResourcesBuildPhase section */
 		FE8512AB3062B9A40092C1F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FE8512BA3062B9A50092C1F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FE8512C43062B9A50092C1F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE8512A93062B9A40092C1F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FE8512B83062B9A50092C1F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FE8512C23062B9A50092C1F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -243,7 +263,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		FE8512CC3062B9A50092C1F7 /* Debug configuration for PBXProject "special1" */ = {
+		FE8512CC3062B9A50092C1F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -282,6 +302,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -305,7 +326,7 @@
 			};
 			name = Debug;
 		};
-		FE8512CD3062B9A50092C1F7 /* Release configuration for PBXProject "special1" */ = {
+		FE8512CD3062B9A50092C1F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -344,6 +365,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -359,7 +381,7 @@
 			};
 			name = Release;
 		};
-		FE8512CF3062B9A50092C1F7 /* Debug configuration for PBXNativeTarget "special1" */ = {
+		FE8512CF3062B9A50092C1F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -403,7 +425,7 @@
 			};
 			name = Debug;
 		};
-		FE8512D03062B9A50092C1F7 /* Release configuration for PBXNativeTarget "special1" */ = {
+		FE8512D03062B9A50092C1F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -447,7 +469,7 @@
 			};
 			name = Release;
 		};
-		FE8512D23062B9A50092C1F7 /* Debug configuration for PBXNativeTarget "special1Tests" */ = {
+		FE8512D23062B9A50092C1F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -473,7 +495,7 @@
 			};
 			name = Debug;
 		};
-		FE8512D33062B9A50092C1F7 /* Release configuration for PBXNativeTarget "special1Tests" */ = {
+		FE8512D33062B9A50092C1F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -499,7 +521,7 @@
 			};
 			name = Release;
 		};
-		FE8512D53062B9A50092C1F7 /* Debug configuration for PBXNativeTarget "special1UITests" */ = {
+		FE8512D53062B9A50092C1F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -524,7 +546,7 @@
 			};
 			name = Debug;
 		};
-		FE8512D63062B9A50092C1F7 /* Release configuration for PBXNativeTarget "special1UITests" */ = {
+		FE8512D63062B9A50092C1F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -555,37 +577,40 @@
 		FE8512A83062B9A40092C1F7 /* Build configuration list for PBXProject "special1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FE8512CC3062B9A50092C1F7 /* Debug configuration for PBXProject "special1" */,
-				FE8512CD3062B9A50092C1F7 /* Release configuration for PBXProject "special1" */,
+				FE8512CC3062B9A50092C1F7 /* Debug */,
+				FE8512CD3062B9A50092C1F7 /* Release */,
 			);
+			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		FE8512CE3062B9A50092C1F7 /* Build configuration list for PBXNativeTarget "special1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FE8512CF3062B9A50092C1F7 /* Debug configuration for PBXNativeTarget "special1" */,
-				FE8512D03062B9A50092C1F7 /* Release configuration for PBXNativeTarget "special1" */,
+				FE8512CF3062B9A50092C1F7 /* Debug */,
+				FE8512D03062B9A50092C1F7 /* Release */,
 			);
+			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		FE8512D13062B9A50092C1F7 /* Build configuration list for PBXNativeTarget "special1Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FE8512D23062B9A50092C1F7 /* Debug configuration for PBXNativeTarget "special1Tests" */,
-				FE8512D33062B9A50092C1F7 /* Release configuration for PBXNativeTarget "special1Tests" */,
+				FE8512D23062B9A50092C1F7 /* Debug */,
+				FE8512D33062B9A50092C1F7 /* Release */,
 			);
+			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		FE8512D43062B9A50092C1F7 /* Build configuration list for PBXNativeTarget "special1UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FE8512D53062B9A50092C1F7 /* Debug configuration for PBXNativeTarget "special1UITests" */,
-				FE8512D63062B9A50092C1F7 /* Release configuration for PBXNativeTarget "special1UITests" */,
+				FE8512D53062B9A50092C1F7 /* Debug */,
+				FE8512D63062B9A50092C1F7 /* Release */,
 			);
+			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
 	rootObject = FE8512A53062B9A40092C1F7 /* Project object */;
-	validationLevel = 1;
 }
