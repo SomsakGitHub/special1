@@ -42,52 +42,14 @@ struct APIClient {
 
     func home() async throws -> HomeInfo {
         let url = baseURL.appendingPathComponent("api/home")
-        let (data, _) = try await send(url)
-        return try decode(HomeInfo.self, from: data)
-    }
-
-    func matches(finished: Bool? = nil, upcoming: Bool? = nil) async throws -> [Match] {
-        var components = URLComponents(url: baseURL.appendingPathComponent("api/matches"), resolvingAgainstBaseURL: false)
-        if let finished {
-            components?.queryItems?.append(URLQueryItem(name: "finished", value: String(finished)))
-        }
-        if let upcoming {
-            components?.queryItems?.append(URLQueryItem(name: "upcoming", value: String(upcoming)))
-        }
-        guard let url = components?.url else { throw APIError.invalidResponse }
-
-        let (data, _) = try await send(url)
-        struct Wrapper: Decodable { let matches: [Match] }
-        return try decode(Wrapper.self, from: data).matches
-    }
-
-    func teams() async throws -> [Team] {
-        let url = baseURL.appendingPathComponent("api/teams")
-        let (data, _) = try await send(url)
-        struct Wrapper: Decodable { let teams: [Team] }
-        return try decode(Wrapper.self, from: data).teams
-    }
-
-    func standings() async throws -> [Standings] {
-        let url = baseURL.appendingPathComponent("api/standings")
-        let (data, _) = try await send(url)
-        struct Wrapper: Decodable { let standings: [Standings] }
-        return try decode(Wrapper.self, from: data).standings
-    }
-
-    private func send(_ url: URL) async throws -> (Data, HTTPURLResponse) {
         let (data, response) = try await URLSession.shared.data(from: url)
         guard let http = response as? HTTPURLResponse else { throw APIError.invalidResponse }
         if !(200..<300).contains(http.statusCode) {
             let message = (try? JSONDecoder().decode(ErrorBody.self, from: data))?.error ?? "Unknown error"
             throw APIError.http(http.statusCode, message)
         }
-        return (data, http)
-    }
-
-    private func decode<T: Decodable>(_ type: T.Type, from data: Data) throws -> T {
         do {
-            return try JSONDecoder().decode(type, from: data)
+            return try JSONDecoder().decode(HomeInfo.self, from: data)
         } catch {
             throw APIError.decoding("\(error)")
         }
